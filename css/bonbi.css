@@ -3,11 +3,15 @@
   --alt-clr: #bf0645;
   --section-clr: #bf064410;
   --txt-clr: #607d8b;
+  --light-txt: rgba(255, 255, 255, 0.55);
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  height: 6000px;
+}
+
+a {
+  color: none;
 }
 
 /* Start components */
@@ -19,6 +23,10 @@ body {
   background-color: var(--alt-clr);
   left: 50%;
   transform: translateX(-50%);
+}
+
+.main-heading svg {
+  color: #ffc107;
 }
 
 /* End components */
@@ -37,7 +45,7 @@ body {
 }
 
 .navbar .search svg {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--light-txt);
 }
 
 .navbar .navbar-toggler:focus {
@@ -76,3 +84,123 @@ body {
 }
 
 /* End Features */
+
+/* Start Work */
+.work {
+  background-color: var(--section-clr);
+}
+
+.work ul .active {
+  background-color: var(--alt-clr);
+  color: var(--light-txt);
+}
+
+.work ul li {
+  cursor: pointer;
+}
+
+.work .box {
+  padding: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work .box::before {
+  content: attr(data-work);
+  position: absolute;
+  background-color: var(--section-clr);
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  color: var(--light-txt);
+  transition: 0.3s;
+  transform: translateX(calc(-100% - 5px));
+}
+.work .box:hover::before {
+  transform: translateX(0);
+}
+/* End Work */
+
+/* Start Stuff */
+.main-heading + p {
+  max-width: 60%;
+}
+
+/* End Stuff */
+
+/* Start Team */
+.team {
+  background-color: var(--section-clr);
+}
+
+.team h2 {
+  color: var(--txt-clr);
+}
+.team h4 {
+  background-color: var(--dark-clr);
+}
+
+/* End Team */
+
+/* Start Project */
+.project {
+  background-color: var(--dark-clr);
+}
+
+/* End Project */
+
+/* Start Subscribe */
+.subscribe {
+  background-color: #ffc107;
+}
+
+.subscribe input[type="text"] {
+  border: none;
+  border-bottom: 1px solid var(--light-txt);
+}
+.subscribe input[type="text"]:focus {
+  outline: none;
+}
+.subscribe ::placeholder {
+  color: var(--light-txt);
+}
+
+.subscribe input[type="submit"] {
+  background-color: var(--dark-clr);
+  color: #ffc107;
+}
+/* End Subscribe */
+
+/* Start Footer */
+footer {
+  background-color: var(--dark-clr);
+}
+
+footer .copyright > span {
+  color: var(--alt-clr);
+}
+footer .copyright div span {
+  color: #ffc107;
+}
+
+footer ul svg {
+  color: var(--light-txt);
+  height: 20px;
+  width: 20px;
+}
+footer .facebook {
+  background-color: #1877f2;
+}
+footer .twitter {
+  background-color: #1da1f2;
+}
+footer .linkedin {
+  background-color: #0077b5;
+}
+footer .github {
+  background-color: #333;
+}
+
+/* End Footer */
